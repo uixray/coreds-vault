@@ -1,0 +1,14 @@
+{
+  "name": "coreds-vault",
+  "version": "0.1.0",
+  "description": "CoreDS — Universal Design System + UX Pattern Library",
+  "author": "Ray (@uixray)",
+  "license": "MIT",
+  "scripts": {
+    "build:tokens": "echo 'TODO: Style Dictionary build'",
+    "validate:tokens": "echo 'TODO: DTCG validation'",
+    "scan:freshness": "echo 'TODO: Freshness scanner'",
+    "check:links": "echo 'TODO: Link integrity check'"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,19 @@
+---
+title: "human-in-the-loop"
+type: pattern
+category: ai
+status: seed
+version: "0.1.0"
+created: 2026-02-27
+updated: 2026-02-27
+freshness: current
+freshness_checked: 2026-02-27
+tags: [type/pattern, category/ai, control]
+related_components: []
+related_tokens: []
+platforms: [web, iOS, Android]
+---
+
+# human-in-the-loop
+
+> **TODO:** Заполнить по шаблону pattern.md

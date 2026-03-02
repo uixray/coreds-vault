@@ -1,0 +1,34 @@
+# Obsidian — workspace state (machine-specific)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/graph.json
+.obsidian/hotkeys.json
+.obsidian/plugins/
+.trash/
+.DS_Store
+
+# Obsidian — these ARE tracked (for reproducibility):
+# .obsidian/core-plugins.json      ← which core plugins are enabled
+# .obsidian/community-plugins.json ← which plugins to install
+# .obsidian/snippets/              ← custom CSS snippets
+
+# Archive — personal/private files (not for public repo)
+00-meta/archive/
+
+# Files with secrets / credentials — never commit
+04-automation/prompts/yandex-model-keys.md
+
+# Claude Code — local settings
+.claude/
+
+# Node
+node_modules/
+dist/
+*.log
+
+# OS
+Thumbs.db
+desktop.ini

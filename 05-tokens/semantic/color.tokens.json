@@ -1,0 +1,26 @@
+{
+  "$description": "CoreDS — Semantic Color Tokens (Light theme)",
+  "color": {
+    "surface": {
+      "primary":   { "$value": "{color.white}", "$type": "color" },
+      "secondary": { "$value": "{color.gray.50}", "$type": "color" },
+      "tertiary":  { "$value": "{color.gray.100}", "$type": "color" }
+    },
+    "on-surface": {
+      "primary":   { "$value": "{color.gray.900}", "$type": "color" },
+      "secondary": { "$value": "{color.gray.600}", "$type": "color" },
+      "disabled":  { "$value": "{color.gray.400}", "$type": "color" }
+    },
+    "action": {
+      "primary": {
+        "default": { "$value": "{color.blue.600}", "$type": "color" },
+        "hover":   { "$value": "{color.blue.700}", "$type": "color" },
+        "active":  { "$value": "{color.blue.800}", "$type": "color" }
+      }
+    },
+    "border": {
+      "default": { "$value": "{color.gray.200}", "$type": "color" },
+      "strong":  { "$value": "{color.gray.400}", "$type": "color" }
+    }
+  }
+}

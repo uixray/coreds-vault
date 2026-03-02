@@ -1,0 +1,51 @@
+{
+  "$schema": "CoreDS Freshness Rules v1",
+  "description": "Периоды проверки актуальности по категориям контента",
+  "rules": {
+    "foundations": {
+      "path_prefix": "02-patterns/foundations",
+      "freshness_period_days": 365,
+      "note": "Фундаментальные принципы меняются редко"
+    },
+    "platform": {
+      "path_prefix": "02-patterns/platform",
+      "freshness_period_days": 180,
+      "note": "Платформенные гайдлайны обновляются 1-2 раза в год (WWDC, Google I/O)"
+    },
+    "interaction": {
+      "path_prefix": "02-patterns/interaction",
+      "freshness_period_days": 270,
+      "note": "Паттерны взаимодействия относительно стабильны"
+    },
+    "ai": {
+      "path_prefix": "02-patterns/ai",
+      "freshness_period_days": 90,
+      "note": "AI паттерны меняются быстро"
+    },
+    "domain": {
+      "path_prefix": "02-patterns/domain",
+      "freshness_period_days": 180,
+      "note": "Доменные паттерны средне стабильны"
+    },
+    "tokens": {
+      "path_prefix": "01-design-system/tokens",
+      "freshness_period_days": 365,
+      "note": "Токены обновляются по semver"
+    },
+    "components": {
+      "path_prefix": "01-design-system/components",
+      "freshness_period_days": 270,
+      "note": "Компоненты стабильны после v1"
+    },
+    "architecture": {
+      "path_prefix": "01-design-system/architecture",
+      "freshness_period_days": 365,
+      "note": "ADR пересматриваются раз в год"
+    },
+    "research": {
+      "path_prefix": "03-research",
+      "freshness_period_days": 180,
+      "note": "Исследования устаревают за полгода"
+    }
+  }
+}
