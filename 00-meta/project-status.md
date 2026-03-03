@@ -22,6 +22,15 @@ description: "Current state of the CoreDS Vault after inbox cleanup, outstanding
 
 ## Текущее состояние
 
+### Что сделано (2026-03-03)
+
+Создан раздел `08-workspace/` — документация персонального инструментального стека:
+- Манифест "Designer as Creative Director" — философия максимальной автоматизации
+- 5 Figma-плагинов: UText, URenaming, UData, Design Lint, UVectorFinder
+- 3 сервиса: figma-ai-proxy, tg-digest-bot, AI Design Ops Orchestrator
+- DesignOps Assistant (AutoHotkey)
+- Vault опубликован на GitHub: https://github.com/uixray/coreds-vault
+
 ### Что сделано (2026-03-02)
 
 Выполнена полная систематизация `00-meta/Inbox/` — ~150 файлов разобраны, переименованы, размечены frontmatter и перемещены по разделам vault.

@@ -44,6 +44,11 @@ CoreDS Vault — open-source Obsidian vault с двумя слоями:
   flutter/            Experimental (не в основном roadmap)
 07-figma/             Figma API docs, плагины, скрипты
   reference-docs/     Eagle API, Figma API документация
+08-workspace/         Инструментальный стек дизайнера
+  philosophy/         Манифест "Designer as Creative Director"
+  figma-plugins/      Документация Figma-плагинов (UText, Design Lint и др.)
+  services/           Бэкенд-сервисы (figma-ai-proxy, tg-digest-bot)
+  system/             Системный уровень (DesignOps Assistant / AutoHotkey)
 ```
 
 **Важно:** `00-meta/Inbox/CLAUDE.md` — этот файл. Не перемещать, не удалять.
