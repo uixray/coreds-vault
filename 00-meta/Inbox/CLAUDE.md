@@ -49,6 +49,11 @@ CoreDS Vault — open-source Obsidian vault с двумя слоями:
   figma-plugins/      Документация Figma-плагинов (UText, Design Lint и др.)
   services/           Бэкенд-сервисы (figma-ai-proxy, tg-digest-bot)
   system/             Системный уровень (DesignOps Assistant / AutoHotkey)
+09-knowledge/         База знаний — потреблённый контент (входящий поток)
+  digests/            Telegram-дайджесты (tg-digest-bot /export)
+  clippings/          Web-клиппинги статей (Obsidian Web Clipper)
+  books/              Конспекты книг по дизайну
+  videos/             Транскрипты докладов и видео-лекций
 ```
 
 **Важно:** `00-meta/Inbox/CLAUDE.md` — этот файл. Не перемещать, не удалять.
@@ -81,6 +86,10 @@ CoreDS Vault — open-source Obsidian vault с двумя слоями:
 | Закон UX / психологии | law | `02-patterns/foundations/laws/` |
 | Эвристика / набор принципов | heuristic | `02-patterns/foundations/heuristics/` |
 | Accessibility-тема | pattern | `02-patterns/foundations/accessibility/` |
+| Telegram-дайджест | digest | `09-knowledge/digests/` |
+| Сохранённая статья (web clipper) | clipping | `09-knowledge/clippings/` |
+| Конспект книги | book | `09-knowledge/books/` |
+| Транскрипт/конспект видео | video | `09-knowledge/videos/` |
 | Идея / заметка / TODO | meta | `00-meta/` (оставить, не перемещать) |
 | Непонятно что | — | Спросить Ray |
 
@@ -118,7 +127,7 @@ CoreDS Vault — open-source Obsidian vault с двумя слоями:
 ```yaml
 ---
 title: "Название на английском"
-type: pattern | component | token | adr | law | heuristic | research | guide | meta
+type: pattern | component | token | adr | law | heuristic | research | guide | digest | clipping | book | video | meta
 category: foundations | platform | interaction | ai | domain
 status: seed
 version: "0.1.0"
@@ -231,6 +240,18 @@ platforms: [web, iOS, Android]
 
 ### "Обработай research DR-XXX"
 Прочитай файл из `03-research/deep-research/`, извлеки ключевые находки, предложи какие паттерны/компоненты/токены нужно создать или обновить.
+
+### "Создай дайджест" / "новый дайджест"
+Используй шаблон `04-automation/templates/digest.md`. Сохрани в `09-knowledge/digests/YYYY-MM-DD-digest.md`.
+
+### "Добавь клиппинг X" / "сохрани статью X"
+Используй шаблон `04-automation/templates/clipping.md`. Имя файла: kebab-case заголовок статьи. Сохрани в `09-knowledge/clippings/`.
+
+### "Создай конспект книги X"
+Используй шаблон `04-automation/templates/book.md`. Имя файла: `author-slug-title-slug.md`. Сохрани в `09-knowledge/books/`.
+
+### "Добавь видео X" / "создай транскрипт X"
+Используй шаблон `04-automation/templates/video.md`. Имя файла: `YYYY-event-slug.md`. Сохрани в `09-knowledge/videos/`.
 
 ## Формат ответов
 
