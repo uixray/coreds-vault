@@ -2,19 +2,20 @@
 title: "Button"
 type: component
 status: seed
-version: "0.2.0"
+version: "0.3.0"
 created: 2026-03-04
 updated: 2026-03-04
 freshness: current
 freshness_checked: 2026-03-04
 tags: ["type/component"]
 platforms: [web]
+figma_link: ""
 description: "Auto-generated from Figma"
 ---
 
 ## Кнопка (Button)
 
-Простейший компонент дизайн-системы, с которого обычно всё начинается. Используется для выполнения действий в интерфейсе.
+Кнопка — это простейший компонент дизайн-системы, который обычно используется для выполнения действий, таких как «Сохранить» или «Отправить».
 
 ### Свойства
 
@@ -24,26 +25,23 @@ description: "Auto-generated from Figma"
 | Variant | String | primary / secondary / ghost / outline / destructive / link | primary | Вариант стиля кнопки |
 | State | String | default / hover / active / focus / disabled / loading | default | Состояние кнопки |
 | Has Icon | Boolean | true / false | false | Наличие иконки |
-| Icon Position | String | leading / trailing | leading | Положение иконки относительно текста |
+| Icon Position | String | leading / trailing / icon-only | — | Положение иконки |
 
 ### Использование
 
 #### Делайте так:
 
 - Используйте одну кнопку primary CTA на экран.
-- В тексте кнопки используйте глаголы, например: «Сохранить», «Отправить».
+- В тексте кнопки используйте глагол («Сохранить», «Отправить»).
 
 #### Не делайте так:
 
 - Не используйте кнопку как ссылку для навигации.
-- Не перегружайте кнопки иконками.
+- Не перегружайте кнопку иконками.
 
 ### Доступность
 
-- Роль элемента должна быть `role=button` (или тег `<button>`).
-- `tabindex=0` для обеспечения доступности с клавиатуры.
-- Визуальное выделение при фокусе с помощью `focus-visible ring`.
-- Контрастность согласно WCAG: не менее 4.5:1 для текста и 3:1 для UI-элементов.
-
----
-📖 [Смотреть в Design System](https://ds.uixray.tech/components/button)
+- Роль: `role=button` (или `<button>`).
+- `tabindex=0`.
+- Видимое кольцо при фокусе.
+- Контрастность по WCAG ≥4.5:1 для текста и ≥3:1 для UI-элементов.
