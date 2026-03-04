@@ -1,0 +1,22 @@
+name: Trigger docs site rebuild
+
+# Fires when design system or patterns content is pushed to master
+on:
+  push:
+    branches: [master]
+    paths:
+      - '01-design-system/**'
+      - '02-patterns/**'
+
+jobs:
+  dispatch:
+    name: Dispatch ds.uixray.tech rebuild
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger update-vault workflow in ds.uixray.tech
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" -X POST \
+            -H "Authorization: token ${{ secrets.DS_SITE_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/uixray/ds.uixray.tech/actions/workflows/update-vault.yml/dispatches" \
+            -d '{"ref":"master"}'
