@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp",
+      "description": "Figma MCP Server for design editing and collaboration",
+      "enabled": true,
+      "transport": "streamable-http",
+      "authentication": {
+        "type": "oauth",
+        "scopes": ["file:read", "file:write", "library:read"]
+      },
+      "rateLimiting": {
+        "callsPerDay": 200,
+        "note": "Professional plan limit, adjust based on your subscription"
+      }
+    },
+    "figma-dev": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@figma/mcp-server"],
+      "description": "Local Figma MCP Server for development",
+      "enabled": false,
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${env:FIGMA_ACCESS_TOKEN}"
+      }
+    }
+  },
+  "settings": {
+    "autoStart": true,
+    "logLevel": "info",
+    "skillsDirectory": ".codeassistant/rules",
+    "promptsDirectory": ".codeassistant/prompts"
+  }
+}

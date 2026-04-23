@@ -32,3 +32,8 @@ dist/
 # OS
 Thumbs.db
 desktop.ini
+
+nul
+
+# Local MCP config (may contain tokens)
+.codeassistant/mcp.json

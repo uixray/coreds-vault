@@ -1,0 +1,136 @@
+{
+  "$schema": "./schema.json",
+  "version": "1.0.0",
+  "name": "Figma MCP Integration Rules",
+  "description": "Custom rules for AI agent when working with Figma MCP",
+  "rules": [
+    {
+      "id": "figma-001",
+      "name": "Auto Layout Requirement",
+      "description": "Always use Auto Layout when creating containers",
+      "condition": "when creating or modifying frames/groups",
+      "instruction": "Set layoutMode to 'HORIZONTAL' or 'VERTICAL' and configure padding, itemSpacing appropriately",
+      "severity": "warning"
+    },
+    {
+      "id": "figma-002",
+      "name": "Color Variables Preference",
+      "description": "Prefer design system variables over hardcoded HEX values",
+      "condition": "when setting colors",
+      "instruction": "Use figma.variables.getVariableById() or search_design_system for color tokens before using HEX codes",
+      "severity": "error"
+    },
+    {
+      "id": "figma-003",
+      "name": "Font Loading",
+      "description": "Always load fonts before text operations",
+      "condition": "before any text manipulation",
+      "instruction": "Call figma.loadFontAsync() for each font family/style used",
+      "severity": "error"
+    },
+    {
+      "id": "figma-004",
+      "name": "Naming Convention",
+      "description": "Use PascalCase for component names matching React components",
+      "condition": "when naming layers/components",
+      "instruction": "Name layers in PascalCase format (e.g., 'PrimaryButton', 'UserAvatar')",
+      "severity": "warning"
+    },
+    {
+      "id": "figma-005",
+      "name": "Chunking Strategy",
+      "description": "Break large changes into multiple calls to avoid 20KB limit",
+      "condition": "when making extensive modifications",
+      "instruction": "Use get_metadata to analyze structure, then make changes in logical groups (header, content, footer)",
+      "severity": "info"
+    },
+    {
+      "id": "figma-006",
+      "name": "Component Instance Safety",
+      "description": "Never modify master components directly",
+      "condition": "when editing components",
+      "instruction": "Use component.createInstance() for instances, swapComponent() for variant changes",
+      "severity": "error"
+    },
+    {
+      "id": "figma-007",
+      "name": "Error Handling",
+      "description": "Implement try-catch for all Figma API calls",
+      "condition": "in all use_figma scripts",
+      "instruction": "Wrap Figma API operations in try-catch blocks and provide meaningful error messages",
+      "severity": "warning"
+    },
+    {
+      "id": "figma-008",
+      "name": "Preview Before Apply",
+      "description": "Show generated code to user before execution",
+      "condition": "before executing use_figma",
+      "instruction": "Display the JavaScript code that will be executed and ask for confirmation",
+      "severity": "info"
+    },
+    {
+      "id": "figma-009",
+      "name": "Design System Alignment",
+      "description": "Check alignment with design system tokens",
+      "condition": "when creating new elements",
+      "instruction": "Verify spacing, colors, typography match tokens from design system",
+      "severity": "warning"
+    },
+    {
+      "id": "figma-010",
+      "name": "Asset Limitations",
+      "description": "Acknowledge limitations with images and local fonts",
+      "condition": "when user requests image operations",
+      "instruction": "Inform user that bitmap image operations are limited and local fonts may not be available",
+      "severity": "info"
+    }
+  ],
+  "toolSpecificRules": {
+    "use_figma": {
+      "preExecution": [
+        "Load required fonts using figma.loadFontAsync()",
+        "Validate target nodes exist",
+        "Check rate limits"
+      ],
+      "postExecution": [
+        "Return success status with node IDs",
+        "Suggest next steps if applicable"
+      ],
+      "template": "See figma-use.md skill for code template"
+    },
+    "get_design_context": {
+      "preExecution": [
+        "Validate file URL or file_key",
+        "Specify node query if looking for specific elements"
+      ],
+      "useCases": [
+        "Analyzing existing design structure",
+        "Finding components to update",
+        "Extracting design tokens"
+      ]
+    },
+    "create_new_file": {
+      "preExecution": [
+        "Determine file type (design/figjam)",
+        "Choose appropriate team/organization",
+        "Set meaningful title and description"
+      ],
+      "postExecution": [
+        "Return file_key and URL",
+        "Suggest initial setup steps"
+      ]
+    }
+  },
+  "integration": {
+    "designSystem": "UIXRay Design System",
+    "tokenFormats": ["JSON", "Style Dictionary"],
+    "codeConnect": {
+      "enabled": true,
+      "mappingStrategy": "component-name-matching"
+    },
+    "ciCd": {
+      "enabled": false,
+      "triggers": ["pull_request", "design_tokens_update"]
+    }
+  }
+}
